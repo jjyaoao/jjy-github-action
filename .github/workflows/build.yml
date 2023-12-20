@@ -16,7 +16,7 @@ jobs:
         python-version: 3.8  # Any other Python versions in your project
 
     - name: Install pre-commit
-      run: pip install pre-commit
+      run: pip install pre-commit==2.17.0
 
     - name: Run pre-commit
       run: pre-commit run --all-files
