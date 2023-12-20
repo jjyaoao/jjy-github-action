@@ -1,22 +1,22 @@
-name: Hello World
-on: push
+name: Code Quality Check
+
+on: [push, pull_request]
+
 jobs:
-  my_first_job:
-    name: My first job
+  pre-commit:
+    name: Run pre-commit
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@master
-    - name: Run a single-line script
-      run: echo "Hello World!"
-  my_second_job:
-    name: My second job
-    runs-on: macos-latest
-    steps:
-    - name: Run a multi-line script
-      env:
-        MY_VAR: Hello World!
-        MY_NAME: JJYAOAO
-      run: |
-        echo $MY_VAR
-        echo My name is $MY_NAME
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8  # Any Python version with my project
+
+    - name: Install pre-commit
+      run: pip install pre-commit
+
+    - name: Run pre-commit
+      run: pre-commit run --all-files
