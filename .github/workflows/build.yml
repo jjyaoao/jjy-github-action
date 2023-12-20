@@ -15,9 +15,6 @@ jobs:
       with:
         python-version: 3.8  # Any other Python versions in your project
 
-    - name: pre-commit clean
-      run: pre-commit clean
-
     - name: Install pre-commit
       run: pip install pre-commit
 
