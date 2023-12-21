@@ -14,12 +14,9 @@
 
 
 def greet(name):
-    """
-    Greet a person with their name.
-    """
-    greeting = f"Hello, {name}!"
-    return greeting
+    print("Hello,", name, "!")
 
 
-if __name__ == "__main__":
-    print(greet("World"))
+# 缺少空格，多余的括号，不恰当的逗号使用
+
+greet("World")
