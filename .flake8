@@ -4,7 +4,6 @@ exclude =
     ./build,
     # Exclude third-party libraries
     ./third_party/**,
-    ./python/paddle/utils/gast/**,
 ignore =
     # Whitespace before ‘,’, ‘;’, or ‘:’, it is not compatible with black
     E203,
